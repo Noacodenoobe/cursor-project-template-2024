@@ -666,23 +666,21 @@ FILE_CONTENTS = {
     # =========================================================================
     # MODERN CURSOR AI CONFIGURATION
     # =========================================================================
-    ".cursor/settings.json": """
-        {
-            "cursor.general.enableAutoImport": true,
-            "cursor.agent.backgroundMode": true,
-            "cursor.rules.autoApply": true,
-            "cursor.project.managerRole": true,
-            "cursor.ai.model": "claude-3.5-sonnet",
-            "cursor.ai.temperature": 0.3,
-            "cursor.codebase.indexingEnabled": true,
-            "cursor.ai.enableLongContext": true,
-            "cursor.features.experimentalMode": true,
-            "cursor.documentation.autoGenerate": true,
-            "cursor.testing.autoSuggest": true,
-            "cursor.security.scanEnabled": true,
-            "cursor.performance.monitoring": true
-        }
-    """,
+    ".cursor/settings.json": """{
+    "cursor.general.enableAutoImport": true,
+    "cursor.agent.backgroundMode": true,
+    "cursor.rules.autoApply": true,
+    "cursor.project.managerRole": true,
+    "cursor.ai.model": "claude-3.5-sonnet",
+    "cursor.ai.temperature": 0.3,
+    "cursor.codebase.indexingEnabled": true,
+    "cursor.ai.enableLongContext": true,
+    "cursor.features.experimentalMode": true,
+    "cursor.documentation.autoGenerate": true,
+    "cursor.testing.autoSuggest": true,
+    "cursor.security.scanEnabled": true,
+    "cursor.performance.monitoring": true
+}""",
 
     ".cursor/rules/00_MANAGER_DIRECTIVES.cursorrules": """
         # MANAGER-FIRST AI DIRECTIVES
@@ -1179,34 +1177,32 @@ FILE_CONTENTS = {
         - User satisfaction
     """,
 
-    ".cursor/mcp.json": """
-        {
-            "mcpServers": {},
-            "experimentalFeatures": {
-                "backgroundAgent": true,
-                "bugBot": true,
-                "autoImports": true,
-                "codebaseIndexing": true,
-                "smartCompletion": true,
-                "contextAwareness": true,
-                "predictiveTyping": true,
-                "automaticRefactoring": true
-            },
-            "aiAssistant": {
-                "role": "technical_cto",
-                "managerSupport": true,
-                "autoReporting": true,
-                "riskMonitoring": true,
-                "qualityAssurance": true
-            },
-            "projectSettings": {
-                "managementStyle": "hands_off",
-                "reportingFrequency": "daily",
-                "decisionThreshold": "manager_approval_required",
-                "automationLevel": "high"
-            }
-        }
-    """,
+    ".cursor/mcp.json": """{
+    "mcpServers": {},
+    "experimentalFeatures": {
+        "backgroundAgent": true,
+        "bugBot": true,
+        "autoImports": true,
+        "codebaseIndexing": true,
+        "smartCompletion": true,
+        "contextAwareness": true,
+        "predictiveTyping": true,
+        "automaticRefactoring": true
+    },
+    "aiAssistant": {
+        "role": "technical_cto",
+        "managerSupport": true,
+        "autoReporting": true,
+        "riskMonitoring": true,
+        "qualityAssurance": true
+    },
+    "projectSettings": {
+        "managementStyle": "hands_off",
+        "reportingFrequency": "daily",
+        "decisionThreshold": "manager_approval_required",
+        "automationLevel": "high"
+    }
+}""",
 
     # =========================================================================
     # PROJECT AUTOMATION SCRIPTS
