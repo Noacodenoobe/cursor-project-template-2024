@@ -1620,8 +1620,35 @@ def create_modern_project_structure(root_dir):
         # Write file content
         try:
             formatted_content = content.format(current_date=current_date)
+            # Remove common leading whitespace while preserving relative indentation
+            lines = formatted_content.split('\n')
+            if lines and not lines[0].strip():
+                lines = lines[1:]  # Remove empty first line
+            if lines and not lines[-1].strip():
+                lines = lines[:-1]  # Remove empty last line
+            
+            # Find minimum indentation (excluding empty lines)
+            min_indent = float('inf')
+            for line in lines:
+                if line.strip():  # Skip empty lines
+                    indent = len(line) - len(line.lstrip())
+                    min_indent = min(min_indent, indent)
+            
+            if min_indent == float('inf'):
+                min_indent = 0
+            
+            # Remove common indentation
+            cleaned_lines = []
+            for line in lines:
+                if line.strip():  # Non-empty line
+                    cleaned_lines.append(line[min_indent:])
+                else:  # Empty line
+                    cleaned_lines.append('')
+            
+            final_content = '\n'.join(cleaned_lines)
+            
             with open(full_path, 'w', encoding='utf-8') as f:
-                f.write(textwrap.dedent(formatted_content).strip())
+                f.write(final_content)
             print(f"📄 Created: {os.path.relpath(full_path, root_dir)}")
         except Exception as e:
             print(f"❌ Error creating {full_path}: {e}")
